@@ -12,7 +12,7 @@
         
         <h2>1º Período - Bacharelado em Sistemas de informação</h2>
         
-        <img src="minha-foto.jpg.jpeg" alt="Foto de [Gabriela]" width="150">
+        <img src="minha-foto.jpg.jpg" alt="Foto de [Gabriela]" width="150">
     </header>
 
     <main>
