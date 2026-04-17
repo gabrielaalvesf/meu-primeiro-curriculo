@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 <body>
 
     <header>
-        <h1><div Gabriela="" Alves="" Ferreira=""></div></h1>
+        <h1>Gabriela Alves Ferreira</h1>
         
         <h2>1º Período - Bacharelado em Sistemas de informação</h2>
         
