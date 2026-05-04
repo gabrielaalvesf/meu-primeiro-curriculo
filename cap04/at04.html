@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }
+    header { border-bottom: 2px solid #3498db; margin-bottom: 20px; }
+    h2 { color: #2c3e50; margin-top: 30px; }
+    figure { background: #f4f7f6; border: 1px solid #ddd; padding: 15px; margin: 20px 0; border-radius: 8px; text-align: center; }
+    figcaption { font-style: italic; margin-top: 12px; color: #666; font-size: 0.9em; }
+    img, video, iframe { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recursos Multimídia — Programação Web 1</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Aula em Vídeo (Player Nativo)</h2>
+      <figure>
+        <video controls width="800" height="450" poster="../foto.jpg" preload="metadata">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          <source src="https://www.w3schools.com/html/mov_bbb.webm" type="video/webm" />
+          <track kind="subtitles" src="legendas/aula-html.vtt" srclang="pt" label="Português" default />
+          <p>
+            Seu navegador não suporta vídeo HTML5.
+            <a href="https://www.w3schools.com/html/mov_bbb.mp4">Baixe o vídeo aqui</a>.
+          </p>
+        </video>
+        <figcaption>
+          Vídeo 1 — Demonstração de vídeo nativo HTML5 com pôster personalizado (foto da aluna).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>2. Podcast Semanal</h2>
+      <figure>
+        <audio controls preload="metadata">
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+          <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+          <p>
+            Seu navegador não suporta o elemento de áudio.
+            <a href="https://www.w3schools.com/html/horse.mp3">Baixe o áudio aqui</a>.
+          </p>
+        </audio>
+        <figcaption>
+          Episódio 04: A importância da acessibilidade em arquivos de áudio. 
+          <a href="transcricao.html">Leia a transcrição completa aqui</a>.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>3. Conteúdo Complementar (YouTube)</h2>
+      <figure>
+        <iframe width="800" height="450" 
+                src="https://www.youtube-nocookie.com/embed/S9uJN6IczfE" 
+                title="Tutorial de HTML Semântico para Iniciantes" 
+                loading="lazy" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+        <figcaption>
+          Vídeo sobre tags semânticas no canal oficial do YouTube em modo privado (nocookie).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>4. Banner do Curso (Direção de Arte)</h2>
+      <figure>
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800">
+          <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=400" alt="Código sendo escrito em um dispositivo móvel" width="400" height="300">
+        </picture>
+        <figcaption>
+          Exemplo de Direção de Arte: A imagem muda o enquadramento dependendo do tamanho da tela.
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Atividade 4 — Capítulo 4 | Programação Web 1 |
+      <strong>Aluno:</strong> Gabriela Alves Ferreira | <strong>Matrícula:</strong> 2024013886 |
+      <time datetime="2026-05-04">Maio de 2026</time>
+    </p>
+    <p><a href="../index.html">← Voltar à página principal</a></p>
+  </footer>
+</body>
+</html>
