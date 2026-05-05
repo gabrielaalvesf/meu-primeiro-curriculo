@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Matrícula Acadêmica — Cap. 5 / Ativ. 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 20px; color: #333; }
+    form { background: white; max-width: 700px; margin: 0 auto; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #2c3e50; }
+    .nota { color: #e74c3c; font-size: 0.9em; margin-bottom: 20px; }
+    fieldset { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
+    legend { font-weight: bold; padding: 0 10px; color: #2980b9; }
+    div { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: 600; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+    }
+    .radio-check-group label { display: inline; font-weight: normal; margin-right: 10px; }
+    .btn-container { display: flex; gap: 10px; margin-top: 20px; }
+    button { flex: 1; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .btn-submit { background-color: #2980b9; color: white; }
+    .btn-reset { background-color: #95a5a6; color: white; }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+
+  <h1>Solicitação de Matrícula</h1>
+  
+  <form action="https://httpbin.org/post" method="POST">
+    <p class="nota">* Campos obrigatórios</p>
+
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      
+      <div>
+        <label for="id-nome">Nome completo *</label>
+        <input type="text" id="id-nome" name="nome" required minlength="5" maxlength="100">
+      </div>
+
+      <div>
+        <label for="id-cpf">CPF * (000.000.000-00)</label>
+        <input type="text" id="id-cpf" name="cpf" required 
+               pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+               placeholder="000.000.000-00" 
+               title="CPF no formato 000.000.000-00">
+      </div>
+
+      <div>
+        <label for="id-tel">Telefone ((82) 99999-9999)</label>
+        <input type="tel" id="id-tel" name="telefone" 
+               pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
+               placeholder="(82) 99999-9999">
+      </div>
+
+      <div>
+        <label for="id-email">E-mail *</label>
+        <input type="email" id="id-email" name="email" required>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Dados Acadêmicos</legend>
+
+      <div>
+        <label for="id-curso">Curso pretendido *</label>
+        <select id="id-curso" name="curso" required>
+          <option value="">-- Selecione um curso --</option>
+          <optgroup label="Computação">
+            <option value="si">Sistemas de Informação</option>
+            <option value="cc">Ciência da Computação</option>
+            <option value="ec">Engenharia da Computação</option>
+          </optgroup>
+          <optgroup label="Gestão">
+            <option value="adm">Administração</option>
+            <option value="cont">Ciências Contábeis</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>Período</legend>
+        <div class="radio-check-group">
+          <input type="radio" id="p-manha" name="periodo" value="Manhã">
+          <label for="p-manha">Manhã</label>
+          <input type="radio" id="p-tarde" name="periodo" value="Tarde">
+          <label for="p-tarde">Tarde</label>
+          <input type="radio" id="p-noite" name="periodo" value="Noite">
+          <label for="p-noite">Noite</label>
+        </div>
+      </fieldset>
+
+      <div>
+        <label for="id-ano">Ano de ingresso pretendido *</label>
+        <input type="number" id="id-ano" name="ano_ingresso" min="2025" max="2030" required>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Áreas de Interesse</legend>
+      <div class="radio-check-group">
+        <div>
+          <input type="checkbox" id="int1" name="interesses[]" value="DevWeb">
+          <label for="int1">Desenvolvimento Web</label>
+        </div>
+        <div>
+          <input type="checkbox" id="int2" name="interesses[]" value="BD">
+          <label for="int2">Banco de Dados</label>
+        </div>
+        <div>
+          <input type="checkbox" id="int3" name="interesses[]" value="IA">
+          <label for="int3">Inteligência Artificial</label>
+        </div>
+        <div>
+          <input type="checkbox" id="int4" name="interesses[]" value="SegInfo">
+          <label for="int4">Segurança da Informação</label>
+        </div>
+        <div>
+          <input type="checkbox" id="int5" name="interesses[]" value="Infra">
+          <label for="int5">Infraestrutura</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="btn-container">
+      <button type="submit" class="btn-submit">Solicitar matrícula</button>
+      <button type="reset" class="btn-reset">Limpar formulário</button>
+    </div>
+  </form>
+
+  <p style="text-align: center;"><a href="../index.html">← Voltar à página principal</a></p>
+
+</body>
+</html>

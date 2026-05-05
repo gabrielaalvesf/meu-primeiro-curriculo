@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscrição em Evento — Cap. 5 / Ativ. 4</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #eef2f3; padding: 20px; color: #333; }
+    form { background: white; max-width: 650px; margin: 0 auto; padding: 30px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #1a73e8; margin-top: 0; }
+    h2 { font-size: 1.2em; border-left: 4px solid #1a73e8; padding-left: 10px; margin-top: 25px; }
+    div { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: bold; }
+    input[type="text"], input[type="email"], input[type="datetime-local"], select {
+      width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 6px; box-sizing: border-box;
+    }
+    small { display: block; color: #7f8c8d; margin-top: 5px; font-size: 0.85em; }
+    input[type="range"] { width: 100%; cursor: pointer; }
+    input[type="color"] { height: 40px; width: 100px; cursor: pointer; border: none; background: none; }
+    button { width: 100%; padding: 15px; background-color: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    button:hover { background-color: #1557b0; }
+    .footer-link { text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <form action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
+    <h1>Semana de Tecnologia IFAL</h1>
+    
+    <input type="hidden" name="edicao" value="2026">
+
+    <section>
+      <h2>Identificação do Participante</h2>
+      
+      <div>
+        <label for="id-nome">Nome completo</label>
+        <input type="text" id="id-nome" name="nome" required>
+      </div>
+
+      <div>
+        <label for="id-email">E-mail institucional</label>
+        <input type="email" id="id-email" name="email" required>
+      </div>
+
+      <div>
+        <label for="id-cidade">Cidade de origem</label>
+        <input type="text" id="id-cidade" name="cidade" list="cidades-al">
+        <datalist id="cidades-al">
+          <option value="Maceió">
+          <option value="Arapiraca">
+          <option value="Rio Largo">
+          <option value="Palmeira dos Índios">
+          <option value="União dos Palmares">
+          <option value="Penedo">
+          <option value="São Miguel dos Campos">
+          <option value="Coruripe">
+        </datalist>
+      </div>
+
+      <div>
+        <label for="id-foto">Foto para crachá</label>
+        <input type="file" id="id-foto" name="foto" accept="image/jpeg,image/png" aria-describedby="instrucao-foto">
+        <small id="instrucao-foto">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB.</small>
+      </div>
+    </section>
+
+    <section>
+      <h2>Preferências para o Evento</h2>
+
+      <div>
+        <label for="id-chegada">Data e hora preferida para chegada</label>
+        <input type="datetime-local" id="id-chegada" name="chegada">
+      </div>
+
+      <div>
+        <label for="experiencia">
+          Nível de experiência em programação: <span id="valor-experiencia">5</span>/10
+        </label>
+        <input type="range" id="experiencia" name="experiencia" min="0" max="10" step="1" value="5"
+               oninput="document.getElementById('valor-experiencia').textContent = this.value">
+      </div>
+
+      <div>
+        <label for="id-cor">Cor de preferência para a camiseta</label>
+        <input type="color" id="id-cor" name="cor_camiseta" value="#1a73e8">
+      </div>
+
+      <div>
+        <label for="id-oficinas">Oficinas de interesse</label>
+        <select id="id-oficinas" name="oficinas[]" multiple size="4" aria-describedby="instrucao-oficinas">
+          <option value="html-css">HTML Avançado e CSS Grid</option>
+          <option value="js-moderno">JavaScript Moderno (ES6+)</option>
+          <option value="react">Introdução ao React</option>
+          <option value="ux-ui">Design de Interfaces UX/UI</option>
+          <option value="python-dados">Python para Ciência de Dados</option>
+        </select>
+        <small id="instrucao-oficinas">Use Ctrl (ou Cmd no Mac) para selecionar mais de uma oficina.</small>
+      </div>
+    </section>
+
+    <button type="submit">Confirmar inscrição</button>
+  </form>
+
+  <div class="footer-link">
+    <a href="../index.html">← Voltar à página principal</a>
+  </div>
+
+</body>
+</html>
